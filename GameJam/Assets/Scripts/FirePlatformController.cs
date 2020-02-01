@@ -9,7 +9,8 @@ public class FirePlatformController : MonoBehaviour
     public float jumpForce;
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
-    public bool isGrounded = false;
+    private bool isGrounded = false;
+    private bool onBox = false;
 
     void Start()
     {
@@ -33,9 +34,10 @@ public class FirePlatformController : MonoBehaviour
     }
 
     void Jump() {
-        if (Input.GetKeyDown(KeyCode.W) && (isGrounded)) {
+        if (Input.GetKeyDown(KeyCode.W) && (isGrounded || onBox)) {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             isGrounded = false;
+            onBox = false;
         }
     }
 
@@ -51,11 +53,21 @@ public class FirePlatformController : MonoBehaviour
         if (collision.gameObject.tag == "Ground") {
             isGrounded = true;
         }
+        else if (collision.gameObject.tag == "Box") {
+            if (!isGrounded){
+                onBox = true;
+            }
+        }
     }
 
     void OnCollisionExit2D(Collision2D collision){
         if (collision.gameObject.tag == "Ground") {
             isGrounded = false;
+        }
+        else if (collision.gameObject.tag == "Box") {
+            if (onBox){
+                onBox = false;
+            }
         }
     }
 }
