@@ -5,8 +5,12 @@ using TMPro;
 
 public class GameController : MonoBehaviour
 {
-    public TextMeshProUGUI numFound;
-    public int PiecesCollected = 0;
+    public TextMeshProUGUI numWaterFound;
+    public TextMeshProUGUI numBandagesFound;
+    public TextMeshProUGUI numKoalasHealed;
+    public int KoalasHealed = 0;
+    public int WaterHeld = 0;
+    public int BandagesHeld = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -20,8 +24,14 @@ public class GameController : MonoBehaviour
         
     }
 
-    public void foundPiece(){
-        PiecesCollected++;
-        numFound.text = PiecesCollected.ToString();
+    public void PieceCollected(string val){
+        if (val == "Water"){
+            WaterHeld++;
+            numWaterFound.text = WaterHeld.ToString();
+        }
+        else if (val == "Bandage"){
+            BandagesHeld++;
+            numBandagesFound.text = BandagesHeld.ToString();
+        }
     }
 }
