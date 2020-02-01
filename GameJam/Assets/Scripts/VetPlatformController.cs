@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class VetPlatformController : MonoBehaviour
 {
+    public GameController GameController;
     private Rigidbody2D rb;
     public float speed;
     public float jumpForce;
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
     public bool isGrounded = false;
+    private bool onBox = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        GameController = GameObject.Find("GameController").GetComponent<GameController>();
     }
 
     void Update()
@@ -33,9 +36,10 @@ public class VetPlatformController : MonoBehaviour
     }
 
     void Jump() {
-        if (Input.GetKeyDown(KeyCode.UpArrow) && (isGrounded)) {
+        if (Input.GetKeyDown(KeyCode.UpArrow) && (isGrounded || onBox)) {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             isGrounded = false;
+            onBox = false;
         }
     }
 
@@ -51,11 +55,28 @@ public class VetPlatformController : MonoBehaviour
         if (collision.gameObject.tag == "Ground") {
             isGrounded = true;
         }
+        else if (collision.gameObject.tag == "Box") {
+            if (!isGrounded){
+                onBox = true;
+            }
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision){
+        if (collision.gameObject.tag == "Pickup") {
+            GameController.foundPiece();
+            Destroy(collision.gameObject);
+        }
     }
 
     void OnCollisionExit2D(Collision2D collision){
         if (collision.gameObject.tag == "Ground") {
             isGrounded = false;
+        }
+        else if (collision.gameObject.tag == "Box") {
+            if (onBox){
+                onBox = false;
+            }
         }
     }
 }
