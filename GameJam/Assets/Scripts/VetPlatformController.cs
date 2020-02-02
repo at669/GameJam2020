@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class VetPlatformController : MonoBehaviour
 {
-    public GameController GameController;
+    private GameController GameController;
     private Rigidbody2D rb;
     public float speed;
     public float jumpForce;
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
-    public bool isGrounded = false;
+    private bool isGrounded = false;
     private bool onBox = false;
 
     void Start()
@@ -51,21 +51,21 @@ public class VetPlatformController : MonoBehaviour
         }   
     }
 
+    void OnTriggerEnter2D(Collider2D collision){
+        if (collision.gameObject.tag == "Bandage") {
+            GameController.PieceCollected("Bandage");
+            Destroy(collision.gameObject);
+        }
+    }
+
     void OnCollisionEnter2D(Collision2D collision){
         if (collision.gameObject.tag == "Ground") {
             isGrounded = true;
         }
-        else if (collision.gameObject.tag == "Box") {
+        else if (collision.gameObject.tag == "Rock") {
             if (!isGrounded){
                 onBox = true;
             }
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D collision){
-        if (collision.gameObject.tag == "Pickup") {
-            GameController.foundPiece();
-            Destroy(collision.gameObject);
         }
     }
 
@@ -73,7 +73,7 @@ public class VetPlatformController : MonoBehaviour
         if (collision.gameObject.tag == "Ground") {
             isGrounded = false;
         }
-        else if (collision.gameObject.tag == "Box") {
+        else if (collision.gameObject.tag == "Rock") {
             if (onBox){
                 onBox = false;
             }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FirePlatformController : MonoBehaviour
 {
+    private GameController GameController;
     private Rigidbody2D rb;
     public float speed;
     public float jumpForce;
@@ -15,6 +16,7 @@ public class FirePlatformController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        GameController = GameObject.Find("GameController").GetComponent<GameController>();
     }
 
     void Update()
@@ -49,11 +51,18 @@ public class FirePlatformController : MonoBehaviour
         }   
     }
 
+    void OnTriggerEnter2D(Collider2D collision){
+        if (collision.gameObject.tag == "Water") {
+            GameController.PieceCollected("Water");
+            Destroy(collision.gameObject);
+        }
+    }
+
     void OnCollisionEnter2D(Collision2D collision){
         if (collision.gameObject.tag == "Ground") {
             isGrounded = true;
         }
-        else if (collision.gameObject.tag == "Box") {
+        else if (collision.gameObject.tag == "Rock") {
             if (!isGrounded){
                 onBox = true;
             }
@@ -64,7 +73,7 @@ public class FirePlatformController : MonoBehaviour
         if (collision.gameObject.tag == "Ground") {
             isGrounded = false;
         }
-        else if (collision.gameObject.tag == "Box") {
+        else if (collision.gameObject.tag == "Rock") {
             if (onBox){
                 onBox = false;
             }
