@@ -43,7 +43,6 @@ public class pushme : MonoBehaviour
         // vetBool and firefighterBool must both be there
         // if they are not, turn the box static
         if ((firefighterBool) && (vetBool)) {
-            Moveable = true;
             Debug.Log("firefighter: " + (Mathf.Round(firefighterTrans.position.x*10)/10) + ", vet: "+(Mathf.Round(vetTrans.position.x*10)/10));
 
             if ((Mathf.Round(firefighterTrans.position.x*10)/10) == (Mathf.Round(vetTrans.position.x*10)/10)) {
