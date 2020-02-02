@@ -12,6 +12,8 @@ TagManager:
   - Rock
   - Bandage
   - Fire
+  - AudioSource
+  - AudioListener
   layers:
   - Default
   - TransparentFX
