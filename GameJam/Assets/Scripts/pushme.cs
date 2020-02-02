@@ -11,13 +11,15 @@ public class pushme : MonoBehaviour
     private Transform vetTrans;
     private Rigidbody2D rb;
 
-    public GameObject _vet;
-    public GameObject _firefighter;
+    private GameObject _vet;
+    private GameObject _firefighter;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        _vet = GameObject.FindGameObjectWithTag("Vet");
+        _firefighter = GameObject.FindGameObjectWithTag("Firefighter");
         rb = gameObject.GetComponent<Rigidbody2D>();
         Physics2D.IgnoreCollision(_vet.GetComponent<Collider2D>(), _firefighter.GetComponent<Collider2D>());
         vetTrans = _vet.GetComponent<Transform>();
@@ -41,7 +43,6 @@ public class pushme : MonoBehaviour
         // vetBool and firefighterBool must both be there
         // if they are not, turn the box static
         if ((firefighterBool) && (vetBool)) {
-
             Debug.Log("firefighter: " + (Mathf.Round(firefighterTrans.position.x*10)/10) + ", vet: "+(Mathf.Round(vetTrans.position.x*10)/10));
 
             if ((Mathf.Round(firefighterTrans.position.x*10)/10) == (Mathf.Round(vetTrans.position.x*10)/10)) {

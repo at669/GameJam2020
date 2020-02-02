@@ -12,6 +12,7 @@ public class VetPlatformController : MonoBehaviour
     public float lowJumpMultiplier = 2f;
     private bool isGrounded = false;
     private bool onBox = false;
+    private bool facingRight = false;
 
     void Start()
     {
@@ -33,6 +34,15 @@ public class VetPlatformController : MonoBehaviour
         else if (Input.GetKey(KeyCode.RightArrow)){ x = 1.0f;}
         float moveBy = x * speed;
         rb.velocity = new Vector2(moveBy, rb.velocity.y);
+
+        if (x > 0 && !facingRight){
+            facingRight = true;
+            this.GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else if (x < 0 && facingRight){
+            facingRight = false;
+            this.GetComponent<SpriteRenderer>().flipX = false;
+        }
     }
 
     void Jump() {
@@ -53,7 +63,7 @@ public class VetPlatformController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision){
         if (collision.gameObject.tag == "Bandage") {
-            GameController.PieceCollected("Bandage");
+            GameController.PieceCollected("Bandage", true);
             Destroy(collision.gameObject);
         }
     }

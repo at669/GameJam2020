@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Koala : MonoBehaviour
 {
-    public GameController GameController;
+    private GameController GameController;
     private bool CollRescuer = false;
     private SpriteRenderer KoalaSprite;
 
@@ -22,6 +22,8 @@ public class Koala : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.RightShift)){
                 KoalaSprite.color = Color.white;
                 GameController.KoalaHealed();
+                GameController.PieceCollected("Bandage", false);
+                this.GetComponent<FloatingAnimation>().StopFloating();
             }
         }
         

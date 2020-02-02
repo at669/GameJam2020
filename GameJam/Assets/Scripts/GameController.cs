@@ -43,15 +43,28 @@ public class GameController : MonoBehaviour
         
     }
 
-    public void PieceCollected(string val){
-        if (val == "Water"){
-            WaterHeld++;
-            numWaterFound.text = WaterHeld.ToString();
+    public void PieceCollected(string val, bool found){
+        if (found){
+            if (val == "Water"){
+                WaterHeld++;
+                numWaterFound.text = WaterHeld.ToString();
+            }
+            else if (val == "Bandage"){
+                BandagesHeld++;
+                numBandagesFound.text = BandagesHeld.ToString();
+            }
         }
-        else if (val == "Bandage"){
-            BandagesHeld++;
-            numBandagesFound.text = BandagesHeld.ToString();
+        else {
+            if (val == "Water"){
+                WaterHeld--;
+                numWaterFound.text = WaterHeld.ToString();
+            }
+            else if (val == "Bandage"){
+                BandagesHeld--;
+                numBandagesFound.text = BandagesHeld.ToString();
+            }
         }
+        
     }
 
     public void KoalaHealed(){
@@ -68,7 +81,6 @@ public class GameController : MonoBehaviour
             }
             Destroy(Firefighter);
         }
-        
     }
 
     public void RescueExit(){
@@ -85,8 +97,9 @@ public class GameController : MonoBehaviour
     public void LoadNextLevel(){
         int curLevel;
         int.TryParse(SceneManager.GetActiveScene().name, out curLevel);
+        curLevel++;
 
-        SceneManager.LoadScene(curLevel++.ToString());
+        SceneManager.LoadScene(curLevel.ToString());
     }
 
     public void GoToMainMenu(){
