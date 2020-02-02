@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    public TextMeshProUGUI numWaterFound;
-    public TextMeshProUGUI numBandagesFound;
-    public TextMeshProUGUI numKoalasHealed;
+    private TextMeshProUGUI numWaterFound;
+    private TextMeshProUGUI numBandagesFound;
+    private TextMeshProUGUI numKoalasHealed;
     public GameObject KoalaHolder;
     public PauseMenu PauseMenu;
     private GameObject Firefighter;
@@ -29,6 +29,9 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        numWaterFound = GameObject.Find("WaterFound").GetComponent<TextMeshProUGUI>();
+        numBandagesFound = GameObject.Find("BandagesFound").GetComponent<TextMeshProUGUI>();
+        numKoalasHealed = GameObject.Find("KoalasHealed").GetComponent<TextMeshProUGUI>();
         totalKoalas = KoalaHolder.transform.childCount;
         numKoalasHealed.text = KoalasHealed.ToString() + "/" + totalKoalas.ToString();
 
