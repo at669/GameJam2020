@@ -20,7 +20,7 @@ public class Fire : MonoBehaviour
     void Update()
     {
         if (CollFirefighter){
-            if (Input.GetKeyDown(KeyCode.LeftShift)){
+            if (Input.GetKeyDown(KeyCode.LeftShift) && GameController.GetNum("Water") > 0){
                 isDeactivating = true;
                 GameController.PieceCollected("Water", false);
             }

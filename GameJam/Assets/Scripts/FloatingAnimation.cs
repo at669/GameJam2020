@@ -18,7 +18,7 @@ public class FloatingAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (toFloat){
+        if (toFloat && Time.timeScale == 1){
             initPos.y += Mathf.Sin (Time.fixedTime * Mathf.PI * frequency) * amplitude;
             transform.position = initPos;
         }

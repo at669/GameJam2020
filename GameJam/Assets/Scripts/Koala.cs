@@ -19,7 +19,7 @@ public class Koala : MonoBehaviour
     void Update()
     {
         if (CollRescuer){
-            if (Input.GetKeyDown(KeyCode.RightShift)){
+            if (Input.GetKeyDown(KeyCode.RightShift) && GameController.GetNum("Bandage") > 0){
                 KoalaSprite.color = Color.white;
                 GameController.KoalaHealed();
                 GameController.PieceCollected("Bandage", false);
