@@ -1562,7 +1562,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 76df5f5b9a36c462c8389dd066bc46a7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c5337eeab6dbf4c5086440ee30999b3d, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2264,7 +2264,8 @@ MonoBehaviour:
     station icon by Freepik from www.flaticon.com\nHospital icon by Freepik from www.flaticon.com\nKoala
     icon by Freepik from www.flaticon.com\nRock icon by Kiranshastry from www.flaticon.com\nWater
     droplet icon by DinosoftLabs from www.flaticon.com\nLondrina font by Marcelo Magalh\xE3es
-    Pereira\nFree Game Button Pack from GameArt2D"
+    Pereira\nFree Game Button Pack from GameArt2D\nFree Platformer Game Tileset from
+    GameArt2D"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: de81c77d3bdae44f18542415887ee7f1, type: 2}
   m_sharedMaterial: {fileID: -9016582156711846752, guid: de81c77d3bdae44f18542415887ee7f1,
@@ -2334,12 +2335,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: -117.65128, z: -103.33877, w: -111.28793}
   m_textInfo:
     textComponent: {fileID: 481541581}
-    characterCount: 469
+    characterCount: 513
     spriteCount: 0
-    spaceCount: 62
-    wordCount: 79
+    spaceCount: 68
+    wordCount: 85
     linkCount: 0
-    lineCount: 19
+    lineCount: 21
     pageCount: 1
     materialCount: 2
   m_isUsingLegacyAnimationComponent: 0
@@ -3900,7 +3901,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 76df5f5b9a36c462c8389dd066bc46a7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c5337eeab6dbf4c5086440ee30999b3d, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -9747,7 +9748,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 76df5f5b9a36c462c8389dd066bc46a7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c5337eeab6dbf4c5086440ee30999b3d, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
