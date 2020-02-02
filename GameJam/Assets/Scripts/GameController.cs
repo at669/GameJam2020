@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     public TextMeshProUGUI numBandagesFound;
     public TextMeshProUGUI numKoalasHealed;
     public GameObject KoalaHolder;
+    public PauseMenu PauseMenu;
     private GameObject Firefighter;
     private GameObject Rescuer;
 
@@ -42,6 +43,15 @@ public class GameController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R)){
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)){
+            if (Time.timeScale == 1){
+                PauseMenu.PauseButton();
+            }
+            else {
+                PauseMenu.PlayButton();
+            }
+            
         }
     }
 
@@ -106,5 +116,16 @@ public class GameController : MonoBehaviour
 
     public void GoToMainMenu(){
         SceneManager.LoadScene("Menu");
+    }
+
+    public int GetNum(string val){
+        if (val == "Bandage"){
+            return BandagesHeld;
+        }
+        // else if (val == "Water"){
+        else {
+            return WaterHeld;
+        }
+
     }
 }
