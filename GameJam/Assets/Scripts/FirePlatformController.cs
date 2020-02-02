@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FirePlatformController : MonoBehaviour
 {
-    public GameController GameController;
+    private GameController GameController;
     private Rigidbody2D rb;
     public float speed;
     public float jumpForce;

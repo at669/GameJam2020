@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class VetPlatformController : MonoBehaviour
 {
-    public GameController GameController;
+    private GameController GameController;
     private Rigidbody2D rb;
     public float speed;
     public float jumpForce;
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
-    public bool isGrounded = false;
+    private bool isGrounded = false;
     private bool onBox = false;
 
     void Start()

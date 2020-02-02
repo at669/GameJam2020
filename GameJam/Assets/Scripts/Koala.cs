@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Koala : MonoBehaviour
 {
+    public GameController GameController;
     private bool CollRescuer = false;
     private SpriteRenderer KoalaSprite;
 
@@ -11,6 +12,7 @@ public class Koala : MonoBehaviour
     void Start()
     {
         KoalaSprite = this.GetComponent<SpriteRenderer>();
+        GameController = GameObject.Find("GameController").GetComponent<GameController>();
     }
 
     // Update is called once per frame
@@ -19,6 +21,7 @@ public class Koala : MonoBehaviour
         if (CollRescuer){
             if (Input.GetKeyDown(KeyCode.RightShift)){
                 KoalaSprite.color = Color.white;
+                GameController.KoalaHealed();
             }
         }
         
