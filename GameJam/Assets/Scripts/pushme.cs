@@ -7,6 +7,8 @@ public class pushme : MonoBehaviour
     private bool Moveable = false;
     private bool firefighterBool = false;
     private bool vetBool = false;
+    private Transform firefighterTrans;
+    private Transform vetTrans;
     private Rigidbody2D rb;
 
     public GameObject _vet;
@@ -18,6 +20,8 @@ public class pushme : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         Physics2D.IgnoreCollision(_vet.GetComponent<Collider2D>(), _firefighter.GetComponent<Collider2D>());
+        vetTrans = _vet.GetComponent<Transform>();
+        firefighterTrans = _firefighter.GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -37,7 +41,14 @@ public class pushme : MonoBehaviour
         // vetBool and firefighterBool must both be there
         // if they are not, turn the box static
         if ((firefighterBool) && (vetBool)) {
-            Moveable = true;
+
+            Debug.Log("firefighter: " + (Mathf.Round(firefighterTrans.position.x*10)/10) + ", vet: "+(Mathf.Round(vetTrans.position.x*10)/10));
+
+            if ((Mathf.Round(firefighterTrans.position.x*10)/10) == (Mathf.Round(vetTrans.position.x*10)/10)) {
+                Moveable = true;
+                return;
+            }
+            Moveable = false;
         }
         else {
             Moveable = false;
