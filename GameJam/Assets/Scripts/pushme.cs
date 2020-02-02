@@ -9,13 +9,15 @@ public class pushme : MonoBehaviour
     private bool vetBool = false;
     private Rigidbody2D rb;
 
-    public GameObject _vet;
-    public GameObject _firefighter;
+    private GameObject _vet;
+    private GameObject _firefighter;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        _vet = GameObject.FindGameObjectWithTag("Vet");
+        _firefighter = GameObject.FindGameObjectWithTag("Firefighter");
         rb = gameObject.GetComponent<Rigidbody2D>();
         Physics2D.IgnoreCollision(_vet.GetComponent<Collider2D>(), _firefighter.GetComponent<Collider2D>());
     }

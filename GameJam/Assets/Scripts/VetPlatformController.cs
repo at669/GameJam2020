@@ -53,7 +53,7 @@ public class VetPlatformController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision){
         if (collision.gameObject.tag == "Bandage") {
-            GameController.PieceCollected("Bandage");
+            GameController.PieceCollected("Bandage", true);
             Destroy(collision.gameObject);
         }
     }
