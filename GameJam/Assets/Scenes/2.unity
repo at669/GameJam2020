@@ -1176,6 +1176,18 @@ Transform:
   m_Father: {fileID: 1591744821}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &756409818 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3830762153932374276, guid: 02f11211fadef47dab8051b8df2689ca,
+    type: 3}
+  m_PrefabInstance: {fileID: 3830762153557337176}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93586706f46d84df2844e2b13377c743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &759794217
 GameObject:
   m_ObjectHideFlags: 0
@@ -2625,6 +2637,16 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9080711327034000221, guid: de1cc1a73f5864034ac145b0ea8477a8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 756409818}
+    - target: {fileID: 9080711327034000221, guid: de1cc1a73f5864034ac145b0ea8477a8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToMainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 9080711326633650645, guid: de1cc1a73f5864034ac145b0ea8477a8,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -2655,30 +2677,45 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9080711326633650644, guid: de1cc1a73f5864034ac145b0ea8477a8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 756409818}
+    - target: {fileID: 9080711326633650644, guid: de1cc1a73f5864034ac145b0ea8477a8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadNextLevel
+      objectReference: {fileID: 0}
     - target: {fileID: 9080711327695455047, guid: de1cc1a73f5864034ac145b0ea8477a8,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 0
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 9080711327695455047, guid: de1cc1a73f5864034ac145b0ea8477a8,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9080711327695455047, guid: de1cc1a73f5864034ac145b0ea8477a8,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9080711327695455047, guid: de1cc1a73f5864034ac145b0ea8477a8,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9080711327695455047, guid: de1cc1a73f5864034ac145b0ea8477a8,
         type: 3}
       propertyPath: m_textInfo.pageCount
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9080711327695455047, guid: de1cc1a73f5864034ac145b0ea8477a8,
+        type: 3}
+      propertyPath: m_text
+      value: Nice job!
       objectReference: {fileID: 0}
     - target: {fileID: 9080711327786466755, guid: de1cc1a73f5864034ac145b0ea8477a8,
         type: 3}
