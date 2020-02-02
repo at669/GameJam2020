@@ -20,3 +20,5 @@ Water droplet icon made by DinosoftLabs from www.flaticon.com
 [Free Game Button Pack from GameArt2D](https://www.gameart2d.com/free-medieval-game-button-pack.html)
 
 [Free Platformer Game Tileset](https://www.gameart2d.com/free-platformer-game-tileset.html)
+
+[Cute Music](https://www.bensound.com/royalty-free-music/track/cute)
