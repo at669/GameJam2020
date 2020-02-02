@@ -398,6 +398,7 @@ GameObject:
   - component: {fileID: 169184326}
   - component: {fileID: 169184325}
   - component: {fileID: 169184324}
+  - component: {fileID: 169184327}
   m_Layer: 0
   m_Name: Box
   m_TagString: Box
@@ -515,6 +516,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &169184327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169184322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6ff6060a2fec4592a161e18070826ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _vet: {fileID: 273344486}
+  _firefighter: {fileID: 809218802}
 --- !u!1 &273344486
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,7 +545,7 @@ GameObject:
   - component: {fileID: 273344487}
   m_Layer: 0
   m_Name: Vet
-  m_TagString: Firefighter
+  m_TagString: Vet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1237,7 +1252,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.990566, g: 0.990566, b: 0.990566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1499,7 +1514,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3d5b207ab9005452caff9612a3bfd6f5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1521,7 +1536,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9716981, g: 0.9671146, b: 0.9675313, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
