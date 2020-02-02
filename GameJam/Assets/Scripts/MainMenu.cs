@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
     public GameObject MainMenuPanel;
     public GameObject InstructionsPanel;
     public GameObject LevelsPanel;
+    public GameObject CreditsPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -33,12 +34,21 @@ public class MainMenu : MonoBehaviour
         MainMenuPanel.SetActive(false);
         InstructionsPanel.SetActive(true);
         LevelsPanel.SetActive(false);
+        CreditsPanel.SetActive(false);
     }
 
     public void LevelsButton(){
         MainMenuPanel.SetActive(false);
         InstructionsPanel.SetActive(false);
         LevelsPanel.SetActive(true);
+        CreditsPanel.SetActive(false);
+    }
+
+    public void CreditsButton(){
+        MainMenuPanel.SetActive(false);
+        InstructionsPanel.SetActive(false);
+        LevelsPanel.SetActive(false);
+        CreditsPanel.SetActive(true);
     }
 
     public void QuitButton(){
@@ -53,5 +63,6 @@ public class MainMenu : MonoBehaviour
         MainMenuPanel.SetActive(true);
         InstructionsPanel.SetActive(false);
         LevelsPanel.SetActive(false);
+        CreditsPanel.SetActive(false);
     }
 }
