@@ -1,4 +1,8 @@
-# GameJam2020
+# [GameJam2020](https://globalgamejam.org/2020/games/koala-rescue-4)
+
+## Try it out [here!](https://globalgamejam.org/2020/games/koala-rescue-4)
+
+### Credits
 Bandage icon made by Freepik from www.flaticon.com
 
 Eucalyptus tree icon made by Freepik from www.flaticon.com
